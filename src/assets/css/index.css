@@ -1,0 +1,152 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: 'PingFang SC Medium';
+    font-weight: 300;
+}
+
+/* 自动换行 */
+.address-br {
+    white-space: pre-line;
+    word-break: break-all;
+    word-wrap: break-word;
+    width: auto;
+}
+
+/* 超出省略号 */
+.text-overflow-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+img {
+    width: 100%;
+}
+
+.img_30 {
+    width: 30px;
+}
+
+.img_18 {
+    width: 18px;
+    margin-right: 6px;
+}
+
+/*flex布局*/
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-start-start {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.flex-start {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flex-col-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*字体*/
+
+.font_DIN {
+    font-family: 'DIN';
+}
+
+.font_10 {
+    font-size: 10px;
+}
+
+.font_12 {
+    font-size: 12px;
+}
+
+.font_500 {
+    font-weight: 500;
+}
+
+.font_600 {
+    font-weight: 600;
+}
+
+/*color*/
+
+.color_999 {
+    color: #999 !important;
+}
+
+.color_333 {
+    color: #333 !important;
+}
+
+.font_14 {
+    font-size: 14px !important;
+    font-weight: 600;
+}
+
+.font_fff {
+    color: #fff;
+}
+
+.none_textStyle {
+    color: #999;
+    text-align: center
+}
+
+/*padding*/
+
+.padding_horizontal_30 {
+    padding: 0 30px;
+    line-height: 30px;
+}
+
+.padding_vertical_30 {
+    padding: 30px 0;
+    line-height: 30px;
+}
+
+.margin_top_10 {
+    margin-top: 10px;
+}
+
+.margin_top_4 {
+    margin-top: 4px;
+}
+
+.margin_bottom_27 {
+    margin-bottom: 27px;
+}
+
+.margin_bottom_10 {
+    margin-bottom: 10px;
+}
+
+/*card 通用布局*/
+.c-box {
+    margin-top: 11px;
+    background: #FFFFFF;
+    border-radius: 6px;
+    border: 1px solid #E1E1E1;
+    overflow: hidden;
+}
+

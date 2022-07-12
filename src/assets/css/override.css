@@ -1,0 +1,19 @@
+.van-tab__text {
+    font-weight: 600;}
+.van-tabs__line{
+    background-color: #6CB7FB!important;
+}
+
+.van-button--default{
+    color: #027BFF!important;
+}
+.van-dialog__confirm{
+    color: #323233!important;
+}
+.van-dialog__header{
+    padding-top: 0.4rem!important;
+
+}
+.van-dialog__message{
+    font-weight: 500;
+}
