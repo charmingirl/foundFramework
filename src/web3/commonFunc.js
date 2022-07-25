@@ -34,8 +34,8 @@ export const BalanceOf = async (contract, address) => {
             return {amount: Number(amount)}
         }
         let decimals = Math.pow(10, Number(contract.decimals))
-        let toWeiAmount = toWeiAmountFunc(amount,decimals)
-        let str = handlerAmount(toWeiAmount)
+        let fromWeiAmount = fromWeiAmountFunc(amount,decimals)
+        let str = handlerAmount(fromWeiAmount)
         return {amount: Number(str)}
     } catch (e) {
         console.log('e--BalanceOf:', e)
