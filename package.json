@@ -8,6 +8,7 @@
     "prodBuild": "set NODE_ENV=prodBuild && vue-cli-service build"
   },
   "dependencies": {
+    "vue-i18n": "^7.3.3",
     "amfe-flexible": "^2.2.1",
     "axios": "^0.27.2",
     "bech32": "^2.0.0",
@@ -17,7 +18,9 @@
     "core-js": "^3.8.3",
     "eth-lib": "^0.1.29",
     "ethers": "^5.6.0",
+    "node-sass": "4.14.1",
     "postcss-pxtorem": "^5.1.1",
+    "sass-loader": "7.3.1",
     "sockjs-client": "^1.6.1",
     "vant": "^2.12.44",
     "vue": "^2.6.11",
@@ -33,10 +36,14 @@
     "@vue/cli-plugin-vuex": "~4.5.13",
     "@vue/cli-service": "~4.5.13",
     "babel-plugin-import": "^1.13.3",
+    "image-webpack-loader": "^8.1.0",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
     "lodash.debounce": "^4.0.8",
-    "vue-template-compiler": "^2.6.11"
+    "sass": "^1.54.0",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
   },
   "browserslist": [
     "> 1%",

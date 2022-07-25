@@ -124,7 +124,7 @@ const handlerAmount = (amount, decimalsNum = 4) => {
     let str = amount.toString()
     let end = str.indexOf('.')
     if (end != -1) {
-        str = str.slice(0, end + decimalsNum)
+        str = str.slice(0, end +  decimalsNum)
     }
     return str
 }

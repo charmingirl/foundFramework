@@ -19,8 +19,11 @@ import filters from "./filters";
 Object.keys(filters).map((item) => {
   Vue.filter(item, filters[item]);
 });
+import {i18n} from './utils/i18n'
+
 new Vue({
   router,
   store,
+  i18n,
   render: h => h(App)
 }).$mount('#app')

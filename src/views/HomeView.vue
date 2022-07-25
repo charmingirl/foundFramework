@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    {{ $t("message.test") }}
     <div class="contentStyle">
       <tab-template @change="changeTab" :list="tabList">
         <div :slot="tabList[0].slot">
@@ -33,6 +34,7 @@
           </div>
           <!--          充值记录-->
           <div class="recordStyle">
+            123456
             <title-template>充值记录</title-template>
             <record-item-template :len="chargeLen" :data="chargeList"></record-item-template>
           </div>
@@ -355,7 +357,7 @@ export default {
   }
 }
 </script>
-<style scoped lang="less">
+<style scoped lang="scss">
 .home {
   height: 100%;
 }
@@ -371,7 +373,7 @@ export default {
 
 }
 
-/deep/ .van-tabs__content {
+::v-deep .van-tabs__content {
   margin-top: 20px;
 }
 
@@ -390,6 +392,7 @@ export default {
   height: 122px;
   background: pink;
 
+
 }
 
 .addressStyle {
@@ -401,6 +404,7 @@ export default {
 }
 
 .recordStyle {
+  color: $theme-text-color;
   margin-top: 44px;
 }
 </style>

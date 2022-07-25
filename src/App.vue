@@ -54,7 +54,6 @@ export default {
 }
 </script>
 <style>
-
 #app {
   padding: 14px;
   font-family: Avenir, Helvetica, Arial, sans-serif;

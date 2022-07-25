@@ -47,9 +47,8 @@ export default {
   },
 };
 </script>
-<style scoped lang="less">
+<style scoped lang="scss">
 .wrap {
-
   margin: 15px auto;
   overflow: hidden;
   width: 347px;
@@ -60,13 +59,13 @@ export default {
   border: 1px solid #EEEEEE;
 }
 
-/deep/ .van-grid-item__text {
+::v-deep .van-grid-item__text {
   font-size: 16px;
   font-weight: 400;
   color: #333333;
 }
 
-/deep/ .van-grid-item__content {
+::v-deep .van-grid-item__content {
   padding: 0px !important;
 }
 

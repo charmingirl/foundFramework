@@ -41,7 +41,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .van-cell {
   margin-top: 9px;
   padding: 0 16px;
@@ -52,7 +52,7 @@ export default {
   border-radius: 12px;
 }
 
-/deep/.van-field__body {
+::v-deep.van-field__body {
   font-weight: 600;
 }
 </style>

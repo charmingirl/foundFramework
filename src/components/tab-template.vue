@@ -1,6 +1,6 @@
 <template>
   <van-tabs :line-width="33" :line-height="3" @change="change" title-active-color="#6DB5FB" title-inactive-color="#999" v-model="active">
-    <van-tab v-for="(item,index) in list" :title="item.title">
+    <van-tab :key="index" v-for="(item,index) in list" :title="item.title">
       <slot :name="item.slot" />
     </van-tab>
   </van-tabs>
@@ -33,6 +33,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="less">
 
 </style>
