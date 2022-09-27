@@ -59,6 +59,11 @@ img {
     justify-content: flex-start;
     align-items: center;
 }
+.flex-around {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 
 .flex-col-center {
     display: flex;

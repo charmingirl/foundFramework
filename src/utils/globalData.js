@@ -24,5 +24,5 @@ export default {
     _fbAddress:'fbAddress',
     _ethAddress:'ethAddress',
     _MOKOM:'MOKOM',
-    _ShowSignInfo:'showSignInfo',
+    _ShowSignInfo:'showSignInfo', // 常规交易信息展示
 }

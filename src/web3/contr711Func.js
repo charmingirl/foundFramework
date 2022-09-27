@@ -1,10 +1,30 @@
+/*
+* return {totalGas, inputData, gas, gasPrice, to, value, symbol, method,amount}
+*
+*
+*
+*
+*
+*
+* */
+
+
+
+
 import globalData from "../utils/globalData";
 import mkAbi from './abi/mkv1.json'
-import web3 from './index'
-
+let web3 = null
 const contractAddress = globalData && globalData._mkContract.trim()
-const mkAbiContract = new web3.eth.Contract(mkAbi, contractAddress)
 
+let mkAbiContract = null
+
+export const initWeb3Contract = ()=>{
+    import("./index").then(res=>{
+        console.log('res---initWeb3Contract',res)
+        web3 = res.default
+        mkAbiContract = new web3.eth.Contract(mkAbi, contractAddress)
+    })
+}
 
 export const mkCharge = async (address, amount,lostGas=false) => {
     let totalGas = 0

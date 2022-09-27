@@ -18,6 +18,7 @@
 
             </div>
           </template>
+          <button-self @click="onTestPledge">测试质押</button-self>
 
           <!--    地址-->
           <div v-if="chooseChannel !== 'FRC20' && chooseChannel !== '选择通道'" class="flex-col-center addressCodeBox">
@@ -34,10 +35,10 @@
           </div>
           <!--          充值记录-->
           <div class="recordStyle">
-            123456
             <title-template>充值记录</title-template>
             <record-item-template :len="chargeLen" :data="chargeList"></record-item-template>
           </div>
+            <double-button :approval-params-info="approvalParamsInfo" :is-approvaling="isApprovaling" @clickAuthorization="clickAuthorizationButton">质押</double-button>
         </div>
         <div :slot="tabList[1].slot">
           <map-record-template :len="mapListLen" :data="mapRecordList"/>
@@ -71,16 +72,18 @@ import CopySelf from "@/components/copy-self";
 import SheetTemplate from "@/components/sheet-template";
 import MapRecordTemplate from "@/components/mapRecord-template";
 import {getChainInfo, getMapList, getRechargeInfo, getRechargeList, getToken, wssAddress,} from "@/request/request";
-import {Balance, BalanceOf, sendTransaction} from '../web3/commonFunc'
-import {mkCharge} from '../web3/contr711Func'
+import {Balance, BalanceOf, sendTransaction,initWeb3} from '@/web3/commonFunc'
+import {mkCharge,initWeb3Contract} from '@/web3/contr711Func'
 import {Local} from "@/utils/tools";
 import QrCodeSelf from "@/components/qrCode-self";
+import DoubleButton from "@/components/double-button";
 
 Vue.use(Icon);
 
 export default {
   name: 'HomeView',
   components: {
+    DoubleButton,
     QrCodeSelf,
     MapRecordTemplate,
     SheetTemplate,
@@ -99,8 +102,8 @@ export default {
     this.fbAddress = Local.get(this.$globalData._fbAddress)
     this.initWebsocket()
     this.getChainInfo()
-    this.getMainCoinBalance()
-    this.getContrCoinBalance()
+    // this.getMainCoinBalance()
+    // this.getContrCoinBalance()
     this.getChargeList(this.ethAddress)
     //  获取rawTx
     // webview交互
@@ -109,6 +112,13 @@ export default {
       this.onChain(rawTx)
     };
 
+  },
+  mounted() {
+    initWeb3(()=>{
+      this.getMainCoinBalance()
+      this.getContrCoinBalance()
+    })
+    initWeb3Contract()
   },
   data() {
     return {
@@ -143,12 +153,41 @@ export default {
       mapList: [],
       mapLen: 0,
       webSocketObj: null,
+      isApprovaling:false, // 正在授权监听标识
+      approvalParamsInfo:{}, // 授权所需要的参数
     }
   },
   destroyed() {
     this.onClose()
   },
   methods: {
+
+
+    /*
+    *
+    * 上链相关
+    *
+    * */
+    //点击授权按钮
+    clickAuthorizationButton(){
+      this.approvalParamsInfo = {
+        address:this.ethAddress,
+
+      }
+      this.isApprovaling = !this.isApprovaling
+    },
+
+    /*
+    * 点击测试质押按钮
+    * */
+    onTestPledge(){
+      console.log('onTestPledge-----')
+      mkCharge(this.ethAddress,'10').then(res=>{
+        console.log('res---',res)
+      })
+    },
+
+
     initWebsocket() {
       let baseUrl = wssAddress
       if (!this.ethAddress) {
@@ -368,6 +407,7 @@ export default {
   min-height: 509px;
   height: auto;
   background: #FFFFFF;
+  //background: $theme-text-color;
   border-radius: 12px;
   padding-bottom: 60px;
 

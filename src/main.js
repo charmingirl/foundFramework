@@ -19,8 +19,16 @@ import filters from "./filters";
 Object.keys(filters).map((item) => {
   Vue.filter(item, filters[item]);
 });
-import {i18n} from './utils/i18n'
+/*
+* 打印当前打包版本
+* */
+import {copyRightConsole} from "./utils/consoleLogUtils";
+import('/package.json').then(packageInfo=>{
+  copyRightConsole(packageInfo)
+})
 
+import {i18n} from './utils/i18n'
+import 'core-js/stable';
 new Vue({
   router,
   store,

@@ -8,6 +8,9 @@
     "prodBuild": "set NODE_ENV=prodBuild && vue-cli-service build"
   },
   "dependencies": {
+    "@babel/core": "^7.19.0",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.19.0",
     "vue-i18n": "^7.3.3",
     "amfe-flexible": "^2.2.1",
     "axios": "^0.27.2",
@@ -43,7 +46,9 @@
     "sass": "^1.54.0",
     "vue-template-compiler": "^2.6.11",
     "webpack": "^5.73.0",
-    "webpack-cli": "^4.10.0"
+    "webpack-cli": "^4.10.0",
+    "unplugin-auto-import": "^0.10.2",
+    "unplugin-vue-components": "^0.21.2"
   },
   "browserslist": [
     "> 1%",

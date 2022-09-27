@@ -11,6 +11,7 @@
 import ConnectWalletTemplate from "@/components/connectWallet-template";
 import {Local} from "@/utils/tools";
 import TabberSelf from "@/components/tabber-self";
+import {toWeiAmountFunc} from "@/web3/utils/contractCoinTranslateWei";
 
 export default {
   components: {TabberSelf, ConnectWalletTemplate},

@@ -1,8 +1,16 @@
-import web3 from "@/web3/index";
 const krc20abi = require('./abi/krc20.json')
 
 import {fromWeiAmountFunc,toWeiAmountFunc} from "@/web3/utils/contractCoinTranslateWei";
 
+
+let web3 = null
+export const initWeb3 = (callback)=>{
+    import("./index").then(res=>{
+        console.log('res---',res)
+        web3 = res.default
+        callback&&callback(web3)
+    })
+}
 /*
 *余额  主网币 @params：address // 要查询的钱包地址
 */
